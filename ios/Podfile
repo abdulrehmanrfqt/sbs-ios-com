@@ -12,11 +12,8 @@ target 'SBS' do
     :hermes_enabled => false
   )
 
-  pod 'TouchID', :path => '../node_modules/react-native-touch-id'
+pod 'GoogleMLKit/TextRecognition'
 
-  pod 'react-native-blob-util', :path => '../node_modules/react-native-blob-util'
-
-  pod 'react-native-pdf', :path => '../node_modules/react-native-pdf'
 
   target 'SBSTests' do
     inherit! :complete
@@ -31,6 +28,6 @@ target 'SBS' do
 
   post_install do |installer|
     react_native_post_install(installer)
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    # __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
